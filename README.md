@@ -2,7 +2,7 @@
 
 ## Install with docker-compose
 
-You should have Docker and Node.js installed on your environment.
+You should have Docker, php composer, and Node.js installed on your environment.
 
 1) clone repo
    ```
@@ -13,12 +13,17 @@ You should have Docker and Node.js installed on your environment.
    cd dynamo-app && cp .env.example .env
    ```
 3) adjust the .env file according your needs
-4) start docker containers
+   set app key ```APP_KEY=your_key_goes_here```
+4) install dependenses
    ```
-   docker compose up
+   composer install
    ```
 5) build front-end assets
     ```
     npm run build
     ```  
-6) Open [localhost](http://localhost) in your browser
+6) start docker containers
+   ```
+   docker compose up
+   ```
+7) Open [localhost](http://localhost) in your browser
