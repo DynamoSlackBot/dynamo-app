@@ -10,7 +10,7 @@ You should have Docker and Node.js installed on your environment.
    ```
 2) create the .env file
    ```
-   cp .env.example .env
+   cd dynamo-app && cp .env.example .env
    ```
 3) adjust the .env file according your needs
 4) start docker containers
