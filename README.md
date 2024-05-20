@@ -18,6 +18,9 @@ You should have Docker, php composer, and Node.js installed on your environment.
    ```
    composer install
    ```
+   ```
+   npm install
+   ```
 5) build front-end assets
     ```
     npm run build
