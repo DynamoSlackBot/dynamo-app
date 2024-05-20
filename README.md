@@ -13,7 +13,10 @@ You should have Docker, php composer, and Node.js installed on your environment.
    cd dynamo-app && cp .env.example .env
    ```
 3) adjust the .env file according your needs
-   set app key ```APP_KEY=your_key_goes_here```
+   generate app key
+   ```
+   php artisan key:generate
+   ```
 4) install dependenses
    ```
    composer install
