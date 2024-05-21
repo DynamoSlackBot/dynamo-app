@@ -24,7 +24,19 @@ dbContainer:
   name: db
   image: "mysql/mysql-server:8.0"
   port: 3306
-
+  env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: "rootpassword"
+    - name: MYSQL_ROOT_HOST
+      value: "%"
+    - name: MYSQL_DATABASE
+      value: "dynamodb"
+    - name: MYSQL_USER
+      value: "dynamouser"
+    - name: MYSQL_PASSWORD
+      value: "password"
+    - name: MYSQL_ALLOW_EMPTY_PASSWORD
+      value: 1
 
 imagePullSecrets: []
 nameOverride: ""

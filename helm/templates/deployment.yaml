@@ -36,3 +36,8 @@ spec:
             image: {{ .Values.dbContainer.image }}
             ports:
               - containerPort: {{ .Values.dbContainer.port }}
+            env:
+              {{- range .Values.dbContainer.env }}
+              - name: {{ .name }}
+                value: {{ .value | quote }}
+              {{- end }}
