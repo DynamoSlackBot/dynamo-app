@@ -1,5 +1,24 @@
 # Dynamo demo app
 
+## Install with helm
+
+1) spin-up your k8s environment
+2) clone repo
+   ```
+   git clone  https://github.com/DynamoSlackBot/dynamo-app && cd ./dynamo-app
+   ```
+3) Install helm chart to k8s
+   ```
+   helm install my-release ./helm
+   ```
+4) review k8s resources
+  ```
+   kubectl get po -A
+   ```
+  ```
+   kubectl describe po [pod name]
+   ```
+
 ## Install with docker-compose
 
 You should have Docker, php composer, and Node.js installed on your environment.
