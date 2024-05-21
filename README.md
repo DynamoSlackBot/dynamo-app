@@ -12,24 +12,19 @@ You should have Docker, php composer, and Node.js installed on your environment.
    ```
    cd dynamo-app && cp .env.example .env
    ```
-3) adjust the .env file according your needs
-   generate app key
-   ```
-   php artisan key:generate
-   ```
-4) install dependenses
+3) install dependenses
    ```
    composer install
    ```
    ```
    npm install
    ```
-5) build front-end assets
+4) build front-end assets
     ```
     npm run build
     ```  
-6) start docker containers
+5) start docker containers
    ```
    docker compose up
    ```
-7) Open [localhost](http://localhost) in your browser
+6) Open [localhost](http://localhost) in your browser
