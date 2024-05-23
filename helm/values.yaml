@@ -42,7 +42,7 @@ frontContainer:
   name: front
   image: "olukyanenko/dynamo-app"
   # imageTag: "v1.0.0-4bce078-linux-amd64"
-  imageTag: "v1.0.0-521f260-linux-arm64"
+  imageTag: "v1.0.0-24481c6-linux-arm64"
   port: 80
 
 imagePullSecrets: []
