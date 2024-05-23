@@ -61,6 +61,7 @@ COPY ./docker/8.3/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY ./docker/8.3/php.ini /etc/php/8.3/cli/conf.d/99-sail.ini
 RUN chmod +x /usr/local/bin/start-container
 RUN chmod -R 777 /var/www/html/storage
+RUN chmod -R 777 /var/www/html/storage/logs
 
 
 EXPOSE 80
