@@ -23,6 +23,10 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
+      volumes:
+      - name: front-pv-storage
+        persistentVolumeClaim:
+          claimName: front-pvc
       containers:
           - name: {{ .Chart.Name }}-{{ .Values.cacheContainer.name }}
             image: {{ .Values.cacheContainer.image }}
@@ -45,3 +49,6 @@ spec:
             image: {{ .Values.frontContainer.image }}:{{ .Values.frontContainer.imageTag }}
             ports:
               - containerPort: {{ .Values.frontContainer.port }}
+            volumeMounts:
+              - mountPath: "/var/www/html/storage/logs"
+                name: front-pv-storage
