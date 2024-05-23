@@ -38,6 +38,12 @@ dbContainer:
     - name: MYSQL_ALLOW_EMPTY_PASSWORD
       value: 1
 
+frontContainer:
+  name: front
+  image: "olukyanenko/dynamo-app"
+  imageTag: "v1.0.0-4bce078-linux-amd64"
+  port: 80
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""

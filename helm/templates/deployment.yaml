@@ -41,3 +41,7 @@ spec:
               - name: {{ .name }}
                 value: {{ .value | quote }}
               {{- end }}
+          - name: {{ .Chart.Name }}-{{ .Values.frontContainer.name }}
+            image: {{ .Values.frontContainer.image }}:{{ .Values.frontContainer.imageTag }}
+            ports:
+              - containerPort: {{ .Values.frontContainer.port }}
