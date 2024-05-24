@@ -8,7 +8,7 @@ IMAGE_TAG?=$(shell echo ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} 
 
 
 image: 
-	echo ${APP_VER}
+	echo $(shell echo ${APP_VER})
 	docker build -f ./docker/8.3/Dockerfile -t ${IMAGE_TAG} .
 
 push:
