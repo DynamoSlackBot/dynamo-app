@@ -1,7 +1,7 @@
 name: dynamo-app
 
 on: 
-  # push:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -26,27 +26,33 @@ jobs:
         run: make image push
 
   
-#   cd:
-#     name: CD
-#     needs: ci
-#     runs-on: ubuntu-latest
+  cd:
+    name: CD
+    needs: ci
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - uses: actions/checkout@v3
-#         with:
-#           fetch-depth: 0
-#       - run: echo "VERSION=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: echo "VERSION=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-#       - uses: mikefarah/yq@master
-#         with:
-#           cmd: yq -i '.image.tag=strenv(VERSION)' helm/values.yaml
+      - uses: mikefarah/yq@master
+        with:
+          cmd: yq -i '.frontContainer.imageTag=strenv(VERSION)' helm/values.yaml
 
-#       - uses: mikefarah/yq@master
-#         with:
-#           cmd: yq -i '.version=strenv(VERSION)' helm/Chart.yaml
+      - uses: mikefarah/yq@master
+        with:
+          cmd: yq -i '.version=strenv(VERSION)' helm/Chart.yaml
+
+      - uses: falnyr/replace-env-vars-action@master
+        env:
+          APP_VER: $VERSION
+        with:
+          filename: ./.env
       
-#       - run: |
-#           git config user.name github-actions
-#           git config user.email github-actions@github.com
-#           git commit -am "update version $VERSION"
-#           git push 
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "update version $VERSION"
+          git push 

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dynamo APP</title>
+    <title>@php echo env('APP_NAME'); @endphp</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -936,7 +936,11 @@
 
                 <main class="mt-6">
                     <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                        <h1>Dynamo App</h1>
+                        <div>
+                        <p>@php echo env('APP_NAME'); @endphp</p>
+                        <p>@php echo env('APP_VER'); @endphp</p>
+
+                        </div>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eleifend tortor eget nunc tempus ultricies. Sed ut scelerisque velit. Phasellus dignissim lacinia cursus. Duis commodo dolor id pretium euismod. Nunc nunc tellus, dictum eu mauris nec, pharetra congue neque. Morbi feugiat, lectus vitae congue tempor, purus lorem blandit tortor, eu accumsan justo leo sit amet enim. Nullam semper dolor eu neque venenatis, vitae rhoncus felis elementum. Integer eget ante ac risus mollis varius quis sed nulla. Vestibulum finibus dolor hendrerit dui convallis feugiat. Proin lobortis nisl lacus, a pharetra arcu ullamcorper vel.
                         </p>
