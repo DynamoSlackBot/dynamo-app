@@ -21,7 +21,7 @@ jobs:
 
       - run: echo "NEW_APP_VER=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-      - run: sed -i~ '/^TEST_VAR=/s/=.*/=$NEW_APP_VER/' .env
+      - run: sed -i~ '/^APP_VER=/s/=.*/=$NEW_APP_VER/' .env
       
       - run: |
           git config user.name github-actions
