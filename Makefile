@@ -1,4 +1,5 @@
 APP?=$(shell basename $(shell git remote get-url origin))
+APP_VER?=0.0.2
 REGISTRY?=olukyanenko
 VERSION?=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS?=linux
@@ -7,6 +8,7 @@ IMAGE_TAG?=$(shell echo ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} 
 
 
 image: 
+	echo ${APP_VER}
 	docker build -f ./docker/8.3/Dockerfile -t ${IMAGE_TAG} .
 
 push:
