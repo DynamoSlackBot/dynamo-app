@@ -15,9 +15,10 @@
   ```
    kubectl get po -A
    ```
-  ```
+   ```
    kubectl describe po [pod name]
    ```
+5) review application on http://cluster-url.com
 
 ## Install with docker-compose
 
