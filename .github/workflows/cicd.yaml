@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   ci:
     name: CI
@@ -46,6 +49,8 @@ jobs:
       - uses: mikefarah/yq@master
         with:
           cmd: yq -i '.version=strenv(VERSION)' helm/Chart.yaml
+
+      - run: git diff
       
       - run: |
           git config user.name github-actions
