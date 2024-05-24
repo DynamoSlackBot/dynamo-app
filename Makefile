@@ -4,7 +4,7 @@ REGISTRY?=olukyanenko
 VERSION?=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS?=linux
 TARGETARCH?=arm64
-IMAGE_TAG?=$(shell echo ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} | tr A-Z a-z)
+IMAGE_TAG?=$(shell echo ${REGISTRY}/${APP}:${VERSION} | tr A-Z a-z)
 
 
 image: 
